@@ -1,4 +1,10 @@
 terraform {
+cloud {
+    organization = "terraformcloudjeison"
+    workspaces {
+      name = "learn-tfc-aws"
+    }
+}
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -19,6 +25,6 @@ resource "aws_instance" "app_server" {
 
   tags = {
     Name = var.instance_name
-     
+
   }
 }
